@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+     <title>vedio clip</title>
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <img src="./leg.jpg" alt="img">
+        <p>A description of precursors of Bharatanatyam from the 2nd century CE can be found in the ancient Tamil epic Silappatikaram, 
+            while temple sculptures of the 6th to 9th century CE suggest dance was a refined performance art by the mid-1st millennium CE.[6][7] Sadiraattam, 
+            which was renamed Bharatanatyam in 1932, 
+            is the oldest classical dance tradition in India.[8] Bharatanatyam is the state dance form of Tamil Nadu.</p>
+        <button class="btn">Watch now</button>
+    </div>
+    <div class="trailer active">
+       <video src="./video.mp4" controls autoplay></video>
+       <i class="fa-solid fa-xmark fa-2x close-icon"></i>
+    </div>
+    <script>
+        const btnEl = document.querySelector(".btn");
+        const closeIconEl = document.querySelector(".close-icon");
+        const trailerEl = document.querySelector(".trailer");
+        const videoEl = document.querySelector("video");
+        btnEl.addEventListener("click",()=>{
+            trailerEl.classList.remove("active");
+        });
+        closeIconEl.addEventListener("click", ()=>{
+            trailerEl.classList.add("active");
+            videoEl.pause();
+            videoEl.currentTime = 0;
+        });
+
+    </script>
+</body>
+</html>
